@@ -62,13 +62,13 @@ function validate(element) {
   }
 
   //? checkbox validation hack
-
-  if (element.checked) {
-    lang.forEach((elm) => {
-      if (!elm.isEqualNode(element)) elm.removeAttribute("required");
-    });
-  } else lang.forEach((elm) => elm.setAttribute("required", "true"));
-
+  if (element.attributes.type.value === "checkbox") {   
+    if (element.checked) {
+      lang.forEach((elm) => {
+        if (!elm.isEqualNode(element)) elm.removeAttribute("required");
+      });
+    } else lang.forEach((elm) => elm.setAttribute("required", "true"));
+  }
   //??????????????????????????
 
   if (element.validity.tooShort) {

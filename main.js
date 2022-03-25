@@ -67,9 +67,12 @@ function validate(element) {
   }
 
   //? checkbox validation hack
+  
   if (element.checked) {
     lang.forEach((elm) => elm.removeAttribute("required"));
   } else lang.forEach((elm) => elm.setAttribute("required", "true"));
+
+  //??????????????????????????
 
   if (element.validity.tooShort) {
     error.textContent = `${name} should be at least ${element.minLength} characters; you entered ${element.value.length}.`;

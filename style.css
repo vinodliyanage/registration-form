@@ -1,0 +1,145 @@
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 450px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.05), -5px -5px 10px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+form:hover,
+form:focus {
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.08), -5px -5px 10px 0 rgba(0, 0, 0, 0.08);
+}
+form > div > label::after {
+  content: ":";
+}
+
+form div {
+  display: flex;
+}
+
+form > div {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+label {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  justify-self: end;
+}
+
+input,
+select,
+textarea {
+  outline: 0;
+  padding: 0.7rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 0.25rem rgb(41 131 221 / 35%);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border: 0px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-2px);
+}
+
+button {
+  outline: 0;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-family: inherit;
+  background: #fff;
+  cursor: pointer;
+}
+
+select {
+  font-family: inherit;
+}
+
+.form--title {
+    display: block;
+    font-size: 2.3rem;
+    text-align: center;
+    margin:0 0 25px 0;
+}
+.form-check {
+  display: flex;
+  margin-right: 5px;
+  align-items: center;
+  gap: 3px;
+}
+.btn-container {
+  margin-top: 25px;
+}
+.btn--submit {
+  border: 2px solid #2ab172;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn--submit:hover {
+  background: #2ab172;
+  color: #fff;
+}
+
+.btn--reset {
+  border: 2px solid #dc3545;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn--reset:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+.invalid {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.valid {
+  box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
+}
+
+.error {
+  font-size: 1.5rem;
+  display: none;
+  grid-column-start: 2;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.error--active {
+  display: block;
+}
+
+.error--invalid {
+  color: #dc3545;
+}

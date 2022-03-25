@@ -13,6 +13,10 @@ username.addEventListener("input", () => validate(username));
 email.addEventListener("input", () => validate(email));
 country.addEventListener("change", () => validate(country));
 
+sex.forEach((elm) => {
+  elm.addEventListener("change", () => validate(elm));
+});
+
 lang.forEach((elm) => {
   elm.addEventListener("change", () => validate(elm));
 });

@@ -75,7 +75,7 @@ function validate(element) {
     error.textContent = `${name} should be at least ${element.minLength} characters; you entered ${element.value.length}.`;
   } else if (element.validity.patternMismatch) {
     if (name === "name")
-      error.textContent = `${name} should only contains alphabets.`;
+      error.textContent = `${name} name should only contain alphabets.`;
     else if (name === "password")
       error.textContent = `${name} should be at least ${element.minLength} characters; you entered ${element.value.length}.`;
   } else if (element.validity.typeMismatch) {

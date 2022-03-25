@@ -62,7 +62,7 @@ function validate(element) {
   }
 
   //? checkbox validation hack
-  if (element.attributes.type.value === "checkbox") {   
+  if (element.attributes.type?.value === "checkbox") {   
     if (element.checked) {
       lang.forEach((elm) => {
         if (!elm.isEqualNode(element)) elm.removeAttribute("required");

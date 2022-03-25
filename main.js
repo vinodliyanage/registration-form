@@ -22,11 +22,11 @@ lang.forEach((elm) => {
 });
 
 form.addEventListener("submit", (event) => {
-  let isvalid = true;
+  let isvalid = false;
+  for (let element of lang) isvalid |= validate(element);
+
   for (let element of [uid, password, username, country, email, ...sex])
     isvalid &= validate(element);
-
-  for (let element of lang) isvalid |= validate(element);
 
   if (!isvalid) {
     event.preventDefault();

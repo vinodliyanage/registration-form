@@ -23,16 +23,10 @@ lang.forEach((elm) => {
 
 form.addEventListener("submit", (event) => {
   let isvalid = true;
-  for (let element of [
-    uid,
-    password,
-    username,
-    country,
-    email,
-    ...sex,
-    ...lang,
-  ])
+  for (let element of [uid, password, username, country, email, ...sex])
     isvalid &= validate(element);
+
+  for (let element of lang) isvalid |= validate(element);
 
   if (!isvalid) {
     event.preventDefault();
@@ -58,6 +52,7 @@ function validate(element) {
   error.className = "error";
 
   if (element.validity.valid) {
+    isvalid = true;
     error.textContent = "";
     element.className = "valid";
   } else {
@@ -67,9 +62,11 @@ function validate(element) {
   }
 
   //? checkbox validation hack
-  
+
   if (element.checked) {
-    lang.forEach((elm) => elm.removeAttribute("required"));
+    lang.forEach((elm) => {
+      if (!elm.isEqualNode(element)) elm.removeAttribute("required");
+    });
   } else lang.forEach((elm) => elm.setAttribute("required", "true"));
 
   //??????????????????????????

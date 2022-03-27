@@ -1,3 +1,13 @@
+/***********************************************************************
+  
+      github:  https://github.com/vinodliyanage/validation-form
+
+      webpage: https://vinodliyanage.github.io/validation-form/
+  -------------------------------- (C) ---------------------------------
+                           Author: Vinod Liyanage
+                    
+************************************************************************/
+
 const form = document.getElementById("form");
 const uid = document.getElementById("uid");
 const password = document.getElementById("password");

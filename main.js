@@ -85,9 +85,9 @@ function validate(element) {
     error.textContent = `${name} should be at least ${element.minLength} characters; you entered ${element.value.length}.`;
   } else if (element.validity.patternMismatch) {
     if (name === "name")
-      error.textContent = `${name} name should only contain alphabets.`;
+      error.textContent = `name should only contain alphabets.`;
     else if (name === "password")
-      error.textContent = `${name} should be at least ${element.minLength} characters; you entered ${element.value.length}.`;
+      error.textContent = `password should be at least ${element.minLength} characters; you entered ${element.value.length}.`;
   } else if (element.validity.typeMismatch) {
     error.textContent = `${name} is not in the required syntax. (e.g. you@example.com)`;
   } else if (element.validity.valueMissing) {

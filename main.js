@@ -72,15 +72,16 @@ function validate(element) {
   }
 
   //? checkbox validation hack
-  if (element.attributes.type?.value === "checkbox") {   
-    if (element.checked) {
-      lang.forEach((elm) => {
-        if (!elm.isEqualNode(element) && elm.checked) {
-          element.removeAttribute("required");
-          elm.removeAttribute("required");
-        };
-      });
-    } else lang.forEach((elm) => elm.setAttribute("required", "true"));
+  if (element.attributes.type?.value === "checkbox") {
+    lang.forEach((elm) => {
+      if (elm.isEqualNode(element)) return;
+
+      if (elm.checked) element.removeAttribute("required");
+      else element.setAttribute("required", "true");
+      
+      if (element.checked) elm.removeAttribute("required");
+      else elm.setAttribute("required", "true");
+    });
   }
   //??????????????????????????
 

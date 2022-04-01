@@ -1,8 +1,8 @@
 /***********************************************************************
   
-      github:  https://github.com/vinodliyanage/validation-form
+      github:  https://github.com/vinodliyanage/registration-form
 
-      webpage: https://vinodliyanage.github.io/validation-form/
+      webpage: https://vinodliyanage.github.io/registration-form/ 
   -------------------------------- (C) ---------------------------------
                            Author: Vinod Liyanage
                     
@@ -78,7 +78,7 @@ function validate(element) {
 
       if (elm.checked) element.removeAttribute("required");
       else element.setAttribute("required", "true");
-      
+
       if (element.checked) elm.removeAttribute("required");
       else elm.setAttribute("required", "true");
     });
